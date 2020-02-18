@@ -1,0 +1,35 @@
+{
+  "name": "fireback",
+  "version": "0.0.6",
+  "description": "Firebase Backup CLI that makes backing up and restoring Firebase services a breeze.",
+  "main": "src/index.mjs",
+  "scripts": {
+    "start": "node --experimental-modules src/index.mjs",
+    "generateAndDeploy": "node --experimental-modules src/generateAndDeploy/index.mjs",
+    "importFirestoreBackup": "node --experimental-modules src/importFirestoreBackup/index.mjs",
+    "createFirestoreBackup": "node --experimental-modules src/createFirestoreBackup/index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lupas/fireback.git"
+  },
+  "keywords": [
+    "firebase",
+    "backup",
+    "firestore",
+    "firebaseauth"
+  ],
+  "author": "Pascal Luther",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lupas/fireback/issues"
+  },
+  "homepage": "https://github.com/lupas/fireback#readme",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "inquirer": "^6.2.1"
+  },
+  "bin": {
+    "fireback": "./src/index.mjs"
+  }
+}
