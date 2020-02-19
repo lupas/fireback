@@ -59,7 +59,8 @@ fireback
 ```
 
 The following screen should appear:
-// TODO: Image
+![startscreen](https://github.com/lupas/fireback/blob/master/docs/startscreen.png?raw=true "Start Screen")
+
 
 ### Backup Firestore Data
 
