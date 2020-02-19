@@ -1,32 +1,27 @@
-import _importFirestoreBackup from "./_importFirestoreBackup";
-import _importAuthUsers from "./_importAuthUsers";
-import _uploadFirestoreBackup from "./_uploadFirestoreBackup";
-import path from "path";
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+import _importFirestoreBackup from "./_importFirestoreBackup.mjs";
+import _importAuthUsers from "./_importAuthUsers.mjs";
+import _uploadFirestoreBackup from "./_uploadFirestoreBackup.mjs";
 import { inq } from "../_helpers/inquirerWrapper.mjs";
 
 // ******************************************************************
 // ******************************************************************
 // ******************************************************************
 
-global.__basePath = `${__dirname}/../..`; // Project root outside _scripts
-
-// ******************************************************************
-// ******************************************************************
-// ******************************************************************
-
-async function main() {
+export default async function main() {
   console.clear();
   const prompts = global.prompts;
-  console.info("To which environment do you want to upload?");
-  const answers = await inq.prompt([prompts.env]);
-  const projectId = `amiji-${answers.env}`;
+  if (!prompts) {
+    return;
+  }
+  console.info("Which backup do you want to restore?");
+  const answers = await inq.prompt([prompts.availableBackups]);
+  const backup = answers.backup;
 
   try {
-    const backupFolderName = await _uploadFirestoreBackup(projectId);
+    await _uploadFirestoreBackup(backup);
     await inq.prompt([prompts.confirmDeletion]);
-    await _importFirestoreBackup(projectId, backupFolderName);
-    await _importAuthUsers(projectId);
+    await _importFirestoreBackup(backup);
+    await _importAuthUsers(backup);
   } catch (e) {
     console.error(`❌ ${e}`);
   }

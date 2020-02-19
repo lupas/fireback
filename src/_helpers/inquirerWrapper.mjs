@@ -1,35 +1,12 @@
 import inquirer from "inquirer";
-
-const ALL_ENVS = ["lab", "prd"];
-const ALL_MAIN_COMMANDS = [
-  new inquirer.Separator("Firestore"),
-  { name: "Backup: Create (incl. Auth)", value: "backup:create" },
-  { name: "Backup: Restore (incl. Auth)", value: "backup:restore" },
-  { name: "Rules: Deploy", value: "firestore:rules:deploy" },
-  { name: "Indexes: Deploy", value: "firestore:indexes:deploy" },
-  { name: "Indexes: Download", value: "firestore:indexes:download" }
-];
-
+import FsExtra from "fs-extra";
 export const inq = inquirer;
 
 export function setPrompts() {
+  const availableBackups = getAvailableBackupsPrompt();
+  const mainMenuPrompts = getMainMenuPrompts(availableBackups);
+
   const promptsObj = {
-    /** Checkboxes */
-    /************* */
-    websiteIds: {
-      type: "checkbox",
-      name: "websiteIds",
-      default: ["koreanji"],
-      message: "Choose your website(s):",
-      choices: global.config.projects
-    },
-    envs: {
-      type: "checkbox",
-      name: "envs",
-      default: ["lab"],
-      message: "Choose your env(s):",
-      choices: ALL_ENVS
-    },
     /** Lists ******/
     /************* */
     mainCommand: {
@@ -37,22 +14,22 @@ export function setPrompts() {
       name: "mainCommand",
       default: "serve",
       message: "What do you want to do?:",
-      choices: ALL_MAIN_COMMANDS,
+      choices: mainMenuPrompts,
       pageSize: 99999
-    },
-    env: {
-      type: "list",
-      name: "env",
-      default: ["lab"],
-      message: "Choose env:",
-      choices: ALL_ENVS
     },
     projectId: {
       type: "list",
       name: "projectId",
-      default: ["empty"],
+      default: [],
       message: "Choose project:",
       choices: global.config.projects
+    },
+    availableBackups: {
+      type: "list",
+      name: "backup",
+      default: [],
+      message: "Choose backup:",
+      choices: availableBackups
     },
     /** Inputs *****/
     /************* */
@@ -65,11 +42,6 @@ export function setPrompts() {
       type: "input",
       name: "saltSeparator",
       message: "Enter base64_salt_separator (of source project!):"
-    },
-    specificFunction: {
-      type: "input",
-      name: "specificFunction",
-      message: "Enter specific function or leave empty for all:"
     },
     backupFolderName: {
       type: "input",
@@ -87,4 +59,57 @@ export function setPrompts() {
     }
   };
   global.prompts = promptsObj;
+}
+
+function getAvailableBackupsPrompt() {
+  try {
+    const projectFolders = FsExtra.readdirSync("./firebackups");
+    const availableBackups = [];
+
+    for (const projectId of projectFolders) {
+      availableBackups.push(new inquirer.Separator(projectId));
+      const backups = FsExtra.readdirSync(`./firebackups/${projectId}`);
+      for (const backupId of backups) {
+        availableBackups.push({
+          name: backupId,
+          value: {
+            projectId: projectId,
+            backupId: backupId,
+            firestoreFolderId: getFirestoreFolderId(projectId, backupId)
+          }
+        });
+      }
+    }
+    return availableBackups;
+  } catch (e) {
+    return [];
+  }
+}
+
+function getFirestoreFolderId(projectId, backupId) {
+  const files = FsExtra.readdirSync(`./firebackups/${projectId}/${backupId}`);
+  files.splice(files.indexOf("AllAuthUsers.json"), 1);
+  return files[0];
+}
+
+function getMainMenuPrompts(availableBackups) {
+  const prompts = [
+    new inquirer.Separator("Firestore"),
+    {
+      name: "Create Backup (Firestore + Auth)",
+      value: "backup:create"
+    },
+    {
+      name: "Restore Backup (Firestore + Auth)",
+      value: "backup:restore",
+      disabled: true
+    }
+  ];
+  if (availableBackups.length) {
+    prompts[2].disabled = false;
+  }
+  return prompts;
+  //{ name: "Rules: Deploy", value: "firestore:rules:deploy" },
+  //{ name: "Indexes: Deploy", value: "firestore:indexes:deploy" },
+  //{ name: "Indexes: Download", value: "firestore:indexes:download" }
 }

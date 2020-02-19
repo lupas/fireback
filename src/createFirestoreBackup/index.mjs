@@ -1,15 +1,7 @@
 import _downloadAuthUsers from "./_downloadAuthUsers.mjs";
 import _backupFirestore from "./_backupFirestore.mjs";
 import _downloadFirestore from "./_downloadFirestore.mjs";
-import path from "path";
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
 import { inq } from "../_helpers/inquirerWrapper.mjs";
-
-// ******************************************************************
-// ******************************************************************
-// ******************************************************************
-
-global.__basePath = `${__dirname}/../..`; // Project root outside _scripts
 
 // ******************************************************************
 // ******************************************************************

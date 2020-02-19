@@ -3,7 +3,8 @@ import asyncExec from "../_helpers/asyncExec.mjs";
 export default async function(projectId) {
   try {
     console.info(`💬 Downloading auth user from ${projectId}...`);
-    const pathToFolder = `./backups/${global.folderName}`;
+    const pathToFolder = `./firebackups/${projectId}/${global.folderName}`;
+    global.pathToFolder = pathToFolder;
     await asyncExec(`mkdir -p ${pathToFolder}`);
     const cdCmd = `cd ${pathToFolder}`;
     const fbCmd = `firebase use ${projectId} && firebase auth:export AllAuthUsers.json`;
