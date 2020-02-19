@@ -1,0 +1,6 @@
+{
+  "name": "fireback-test",
+  "dependencies": {
+    "fireback": ".."
+  }
+}

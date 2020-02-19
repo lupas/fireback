@@ -1,6 +1,6 @@
 {
   "name": "fireback",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Firebase Backup CLI that makes backing up and restoring Firebase services a breeze.",
   "main": "src/index.mjs",
   "scripts": {
