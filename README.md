@@ -60,6 +60,7 @@ fireback
 ```
 
 The following screen should appear:
+
 ![startscreen](https://github.com/lupas/fireback/blob/master/docs/startscreen.png?raw=true "Start Screen")
 
 ### Firestore
@@ -92,7 +93,7 @@ After you have at least one backup downloaded locally, you can restore it to any
 2. Import your Firestore backup from Storage to Firestore
 3. Uploads and imports all Authentication users from `AllAuthUsers.json`
 
-...
+‼️ Make sure to select the correct target project. If you do select the wrong project, valuable data might get overwritten. So be careful.
 
 ## More
 
