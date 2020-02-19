@@ -14,18 +14,18 @@ export default async function main() {
     return;
   }
   console.info("Which backup do you want to restore?");
-  const answers = await inq.prompt([prompts.availableBackups]);
-  const backup = answers.backup;
+  const backupAnswers = await inq.prompt([prompts.availableBackups]);
+  const backup = backupAnswers.backup;
 
   console.info("Which project do you want to upload this backup to?");
-  const answers = await inq.prompt([prompts.projectId]);
-  const targetId = answers.projectId;
+  const targetIdAnswers = await inq.prompt([prompts.projectId]);
+  const targetId = targetIdAnswers.projectId;
 
   try {
     await _uploadFirestoreBackup(backup, targetId);
     await inq.prompt([prompts.confirmDeletion]);
-    await _importFirestoreBackup(backup);
-    await _importAuthUsers(backup);
+    await _importFirestoreBackup(backup, targetId);
+    await _importAuthUsers(backup, targetId);
   } catch (e) {
     console.error(`❌ ${e}`);
   }
