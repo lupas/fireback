@@ -13,7 +13,7 @@ This Node.js modules helps you backing up and restoring your Firebase services s
 
 Give it a go and feel free to add additional helper functions to the repository!
 
-## IMPORTANT - DISCLAIMER
+## ‼️‼️ IMPORTANT - DISCLAIMER ‼️‼️
 
 PLEASE make sure to _understand what this tool does_. We do not recommend you using this tool without learning what it might do with your data.
 
@@ -60,7 +60,6 @@ fireback
 
 The following screen should appear:
 ![startscreen](https://github.com/lupas/fireback/blob/master/docs/startscreen.png?raw=true "Start Screen")
-
 
 ### Backup Firestore Data
 
