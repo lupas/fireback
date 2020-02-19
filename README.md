@@ -75,8 +75,8 @@ In the end, you will have a folder and files like this:
 
 ```
 - firebackups
-  - _projectId_
-     - _firestoreBackupFolderId_
+  - (projectId)
+     - (firestoreBackupFolderId)
         - ...
      - AllAuthUsers.json
 ```
