@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/lupas/fireback#readme",
   "dependencies": {
-    "fs-extra": "^7.0.1",
-    "inquirer": "^6.2.1"
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.4"
   },
   "bin": {
     "fireback": "./src/index.mjs"
