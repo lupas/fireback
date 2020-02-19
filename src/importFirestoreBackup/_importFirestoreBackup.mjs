@@ -1,14 +1,14 @@
 import asyncExec from "../_helpers/asyncExec.mjs";
 
-export default async function({ projectId, firestoreFolderId }) {
+export default async function({ firestoreFolderId }, targetId) {
   try {
     console.info(
-      `💬 Importing firestore backup into ${projectId}... (might take a while)`
+      `💬 Importing firestore backup into ${targetId}... (might take a while)`
     );
-    const backupPath = `gs://${projectId}.appspot.com/${firestoreFolderId}`;
-    const cmd = `gcloud config set project ${projectId} && gcloud alpha firestore import ${backupPath}`;
+    const backupPath = `gs://${targetId}.appspot.com/${firestoreFolderId}`;
+    const cmd = `gcloud config set project ${targetId} && gcloud alpha firestore import ${backupPath}`;
     await asyncExec(cmd);
-    console.info(`✅ Imported Firestore backup into ${projectId}.`);
+    console.info(`✅ Imported Firestore backup into ${targetId}.`);
   } catch (e) {
     return Promise.reject(e);
   }

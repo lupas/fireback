@@ -17,8 +17,12 @@ export default async function main() {
   const answers = await inq.prompt([prompts.availableBackups]);
   const backup = answers.backup;
 
+  console.info("Which project do you want to upload this backup to?");
+  const answers = await inq.prompt([prompts.projectId]);
+  const targetId = answers.projectId;
+
   try {
-    await _uploadFirestoreBackup(backup);
+    await _uploadFirestoreBackup(backup, targetId);
     await inq.prompt([prompts.confirmDeletion]);
     await _importFirestoreBackup(backup);
     await _importAuthUsers(backup);

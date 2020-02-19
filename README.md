@@ -45,7 +45,7 @@ yarn add fireback
 
 ```js
 export default {
-  // Projects you want to backup from
+  // Projects you want to backup from / restore to
   projects: ["test1-project", "test2-project", "test3-project"]
 };
 ```
