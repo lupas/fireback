@@ -33,7 +33,7 @@ Make sure you have Node.js installed on your system (the newer, the better).
 
 1. Install fireback in the folder where your firebase.json is located:
 
-```bash
+```js
 npm i fireback
 // or
 yarn add fireback
@@ -45,7 +45,7 @@ yarn add fireback
 
 ```js
 export default {
-  //
+  // Projects you want to backup from
   projects: ["test1-project", "test2-project", "test3-project"]
 };
 ```
@@ -61,11 +61,35 @@ fireback
 The following screen should appear:
 ![startscreen](https://github.com/lupas/fireback/blob/master/docs/startscreen.png?raw=true "Start Screen")
 
-### Backup Firestore Data
+### Firestore
 
-...
+#### Create Backup (Firestore + Auth)
 
-### Restore Firestore Data
+This option creates a Firestore and Authentication backup as follows:
+
+1. Downloads all Authentication users locally to a `AllAuthUsers.json` file
+2. Backups your Firestore data to a Storage Bucket
+3. Downloads all Firestore data from the bucket to a local folder
+
+In the end, you will have a folder and files like this:
+
+```
+- firebackups
+  - _projectId_
+     - _firestoreBackupFolderId_
+        - ...
+     - AllAuthUsers.json
+```
+
+This is your Firestore and Authentication data. Keep it safe and store it wherever you want.
+
+#### Restore Backup (Firestore + Auth)
+
+After you have at least one backup downloaded locally, you can restore it to any project you want. This option does the following:
+
+1. Uploads your Firestore backup to Firebase Storage
+2. Import your Firestore backup from Storage to Firestore
+3. Uploads and imports all Authentication users from `AllAuthUsers.json`
 
 ...
 
