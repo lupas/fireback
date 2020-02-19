@@ -19,15 +19,16 @@ PLEASE make sure to _understand what this tool does_. We do not recommend you us
 
 If you do not, you might end up with **high Firebase bills**, **data loss** or other painful experiences.
 
-Please **DO NOT use this applciation if you are not aware what effects backups and restores to your Firebase data might have**.
+‼️ Please **DO NOT use this applciation if you are not aware what effects backups and restores to your Firebase data might have**.
 
 We do not take any responsibility for any damage the use of this module might do to your data or your billing records.
 
-That being said, the application is meant to simplify the process of backing up and restoring Firebase data and if used wisely, should not pose any risk to your Firebase projects. Just be careful :)
+That being said, the application is meant to simplify the process of backing up and restoring Firebase data and if used wisely should not pose any risk to your Firebase projects. Just be careful :)
 
 ## Requirements
 
-Make sure you have Node.js installed on your system (the newer, the better).
+- Make sure you have **Node.js installed** on your system (the newer, the better).
+- Make sure that all projects you use this tool with have **billing enabled** (Blaze Plan+).
 
 ## Setup
 
@@ -68,7 +69,7 @@ The following screen should appear:
 This option creates a Firestore and Authentication backup as follows:
 
 1. Downloads all Authentication users locally to a `AllAuthUsers.json` file
-2. Backups your Firestore data to a Storage Bucket
+2. Backups your Fxirestore data to a Storage Bucket
 3. Downloads all Firestore data from the bucket to a local folder
 
 In the end, you will have a folder and files like this:
