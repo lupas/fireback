@@ -32,15 +32,15 @@ That being said, the application is meant to simplify the process of backing up 
 
 ## Setup
 
-1. Install fireback in the folder where your firebase.json is located:
+1. Install fireback globally:
 
 ```js
-npm i fireback
+npm i -g fireback
 // or
-yarn add fireback
+yarn global add fireback
 ```
 
-2. Create a file called `fireback.config.mjs`
+2. Create a file called `fireback.config.mjs` in the folder where your firebase.json is located.
 
 3. Configure `fireback.config.mjs`:
 
@@ -53,7 +53,7 @@ export default {
 
 ## Run
 
-To run the CLI tool, simply enter `fireback` in your CLI.
+To run the CLI tool, simply enter `fireback` in your CLI where your `fireback.config.mjs` is located.
 
 ```bash
 fireback
