@@ -1,4 +1,4 @@
-# Backup & Restore
+# Backup & Restore
 
 ## Create Backup (Firestore + Auth)
 
