@@ -61,4 +61,4 @@ fireback
 
 The following screen should appear:
 
-![startscreen](https://github.com/lupas/fireback/blob/master/docs/startscreen.png?raw=true "Start Screen")
+![startscreen](https://fireback.netlify.com/startscreen.png "Start Screen")
