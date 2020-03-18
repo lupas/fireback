@@ -1,6 +1,6 @@
 # Introduction
 
-<p align="center"><img align="center" height="250px" src="https://github.com/lupas/firewings/blob/master/misc/logo/logo.png?raw=true"/></p>
+<p align="center"><img align="center" height="250px" src="https://fireback.netlify.com/logo.png"/></p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/fireback"><img src="https://badgen.net/npm/dm/fireback" alt="Downloads"></a>

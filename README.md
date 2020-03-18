@@ -1,5 +1,7 @@
 # 🔥 Fireback 🔥
 
+<p align="center"><img align="center" height="250px" src="https://fireback.netlify.com/logo.png"/></p>
+
 <p align="center">
   <a href="https://www.npmjs.com/package/fireback"><img src="https://badgen.net/npm/dm/fireback" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/fireback"><img src="https://badgen.net/npm/v/fireback" alt="Version"></a>
@@ -11,15 +13,13 @@
 
 This Node.js modules helps you backing up and restoring your Firebase services such as Firebase Firestore or Authentication in a breeze.
 
-Give it a go and feel free to add additional helper functions to the repository!
+📖 [**Read Full Documentation**](https://firewings.netlify.com/)
 
 ## ‼️‼️ IMPORTANT - DISCLAIMER ‼️‼️
 
-PLEASE make sure to _understand what this tool does_. We do not recommend you using this tool without learning what it might do with your data.
-
-If you do not, you might end up with **high Firebase bills**, **data loss** or other painful experiences.
-
 ‼️ Please **DO NOT use this applciation if you are not aware what effects backups and restores to your Firebase data might have**.
+
+If you do it without being careful, you might end up with **high Firebase bills**, **data loss** or other painful experiences.
 
 We do not take any responsibility for any damage the use of this module might do to your data or your billing records.
 

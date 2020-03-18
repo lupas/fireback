@@ -8,7 +8,7 @@ This option creates a Firestore and Authentication backup as follows:
 2. Backups your Fxirestore data to a Storage Bucket
 3. Downloads all Firestore data from the bucket to a local folder
 
-![backup](https://github.com/lupas/fireback/blob/master/docs/backup.png?raw=true "Backup Logs")
+![backup](https://fireback.netlify.com/backup.png "Backup Logs")
 
 In the end, you will have a folder and files like this:
 
@@ -32,7 +32,7 @@ After you have at least one backup downloaded locally, you can restore it to any
 
 ‼️ Make sure to select the correct target project. If you do select the wrong project, valuable data might get overwritten. So be careful.
 
-![restore](https://github.com/lupas/fireback/blob/master/docs/restore.png?raw=true "Restore Logs")
+![restore](https://fireback.netlify.com/restore.png "Restore Logs")
 
 ## More
 
