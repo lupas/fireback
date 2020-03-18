@@ -13,7 +13,7 @@
 
 This Node.js modules helps you backing up and restoring your Firebase services such as Firebase Firestore or Authentication in a breeze.
 
-📖 [**Read Full Documentation**](https://firewings.netlify.com/)
+📖 [**Read Full Documentation**](https://fireback.netlify.com/)
 
 ## ‼️‼️ IMPORTANT - DISCLAIMER ‼️‼️
 
