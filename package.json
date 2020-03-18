@@ -4,6 +4,8 @@
   "description": "Firebase Backup CLI that makes backing up and restoring Firebase services a breeze.",
   "main": "src/index.mjs",
   "scripts": {
+    "docs:build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
     "start": "node --experimental-modules src/index.mjs",
     "generateAndDeploy": "node --experimental-modules src/generateAndDeploy/index.mjs",
     "importFirestoreBackup": "node --experimental-modules src/importFirestoreBackup/index.mjs",
@@ -31,5 +33,8 @@
   },
   "bin": {
     "fireback": "./src/index.mjs"
+  },
+  "devDependencies": {
+    "vuepress": "^1.4.0"
   }
 }
