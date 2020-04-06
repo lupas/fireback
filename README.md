@@ -1,6 +1,6 @@
 # 🔥 Fireback 🔥
 
-<p align="center"><img align="center" height="250px" src="https://fireback.netlify.com/logo.png"/></p>
+<p align="center"><img align="center" height="250px" src="https://fireback.netlify.app/logo.png"/></p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/fireback"><img src="https://badgen.net/npm/dm/fireback" alt="Downloads"></a>
@@ -13,7 +13,7 @@
 
 This Node.js modules helps you backing up and restoring your Firebase services such as Firebase Firestore or Authentication in a breeze.
 
-📖 [**Read Full Documentation**](https://fireback.netlify.com/)
+📖 [**Read Full Documentation**](https://fireback.netlify.app/)
 
 ## ‼️‼️ IMPORTANT - DISCLAIMER ‼️‼️
 
@@ -61,4 +61,4 @@ fireback
 
 The following screen should appear:
 
-![startscreen](https://fireback.netlify.com/startscreen.png "Start Screen")
+![startscreen](https://fireback.netlify.app/startscreen.png "Start Screen")
