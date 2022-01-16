@@ -28,13 +28,13 @@
   },
   "homepage": "https://github.com/lupas/fireback#readme",
   "dependencies": {
-    "fs-extra": "^8.1.0",
-    "inquirer": "^7.0.4"
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.2.4"
   },
   "bin": {
     "fireback": "./src/index.mjs"
   },
   "devDependencies": {
-    "vuepress": "^1.4.0"
+    "vuepress": "^1.9.5"
   }
 }
